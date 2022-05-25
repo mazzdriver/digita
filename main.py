@@ -3,7 +3,7 @@ from modules import *
 
 # Угадайка цифр. Тыкаем кнопку "Старт" и пытаемся отгадать число, загаданное компом.
 
-def main():# start
+def main():  # start
 	if ready_to_play():
 		print(text.letsgo)
 	else:
@@ -31,7 +31,8 @@ def main():# start
 		else:
 			print(text.goodbye)
 			exit()
-			
+
+
 def ready_to_play():
 	print(text.wanna_play)
 	ready_proof = input()
@@ -40,6 +41,7 @@ def ready_to_play():
 	else:
 		return False
 
+
 def foolproof(number):
 	"""Функция для "защиты от дурака". Принимает данные, если это цифры - возвращает True, в остальных случаях False
 	"""
@@ -47,13 +49,15 @@ def foolproof(number):
 		return True
 	else:
 		return False
-		
+
+
 def get_number():
 	attempt = (input(text.attempt))
 	while not foolproof(attempt):
 		print(text.bad_try)
 		attempt = (input(text.attempt))
 	return int(attempt)
-		
-if __name__== "__main__":
-    main()
+
+
+if __name__ == "__main__":
+	main()
